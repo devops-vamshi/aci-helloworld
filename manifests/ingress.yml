@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "aks-6224"
+    labels:
+        app: "aks-6224"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: default-aks-6224.aa35738ba6934b69aabc.southcentralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "aks-6224"
+                servicePort: 80
